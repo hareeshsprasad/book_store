@@ -14,10 +14,10 @@ include "header.php";
                     Category
                   </p>
                   <form class="forms-sample" action="" method="post">
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                       <label for="exampleInputUsername1">Username</label>
                       <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username">
-                    </div>
+                    </div> -->
                     <div class="form-group">
                       <label for="exampleInputEmail1">Category Name</label>
                       <input type="text" class="form-control" name="category"  placeholder="Category Name">
@@ -25,19 +25,9 @@ include "header.php";
                     <div class="form-group">
                       <label for="exampleInputPassword1">Description</label>
                       <input type="text" class="form-control" name="description" placeholder="Description">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputConfirmPassword1">Confirm Password</label>
-                      <input type="password" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password">
-                    </div>
-                    <div class="form-check form-check-flat form-check-primary">
-                      <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
-                        Remember me
-                      </label>
-                    </div>
+                    </div>                
                     <button type="submit" name="submit" class="btn btn-primary me-2">Submit</button>
-                    <button class="btn btn-light">Cancel</button>
+                    <a href="index.php"><button type="button" class="btn btn-light">Cancel</button></a>
                   </form>
                   <?php
                   if(isset($_POST['submit'])){
