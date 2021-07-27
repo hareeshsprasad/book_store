@@ -49,7 +49,19 @@ session_start();
       <div class="navbar-menu-wrapper d-flex align-items-top"> 
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold"><?php echo $_SESSION['admin'];?></span></h1>
+            <?php
+            $time=date("h:i:sa");
+            if ($time >"00:00:00"){
+             ?>
+             <h1 class="welcome-text">Good Afternoon, <span class="text-black fw-bold"><?php echo $_SESSION['admin'];?></span></h1>
+             <?php
+            }else{
+              ?>
+              <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold"><?php echo $_SESSION['admin'];?></span></h1>
+              <?php
+            }
+            ?>
+            
             <h3 class="welcome-sub-text">Your performance summary this week </h3>
           </li>
         </ul>
@@ -404,11 +416,11 @@ session_start();
               <span class="menu-title">Add Category</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="form-elements">
+            <!-- <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"><a class="nav-link" href="add_category.php">Add Category</a></li>
               </ul>
-            </div>
+            </div> -->
           </li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="add_books.php" aria-expanded="false" aria-controls="charts">
