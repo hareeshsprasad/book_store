@@ -2,6 +2,17 @@
 session_start();
 include "connection.php";
 include "header.php";
+$id=$_GET['id'];
+$result=mysqli_query($link,"select * from books where id='$id'");
+while($row=mysqli_fetch_array($result)) {
+    $category=$row['category'];
+    $name=$row['book_name'];
+    $author=$row['author'];
+    $quantity=$row['quantity'];
+    $available_quantity=$row['available_quantity'];
+    $price=$row['price'];
+    $description=$row['description'];    
+}
 ?>
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
@@ -11,39 +22,29 @@ include "header.php";
                     Basic form elements
                 </p>
                 <form class="forms-sample" action="" method="post">
-                <div class="form-group">
-                  <select name="category" class="form-control">
-                  <option selected='selected' disabled='disabled'>Select Category</option>
-                  <?php
-                  $res=mysqli_query($link,"select * from category");
-                  while($row=mysqli_fetch_array($res))
-                  {
-                    echo "<option>";
-                    echo $row["category_name"];
-                    echo "</option>";                   
-                  }
-                  ?>
-                  </select>
-                  </div>
+                    <div class="form-group">
+                      <label for="exampleInputName1">Category</label>
+                      <input type="text" class="form-control"  name="category" value=<?php echo $category;?>>
+                    </div>          
                     <div class="form-group">
                       <label for="exampleInputName1">Book Name</label>
-                      <input type="text" class="form-control"  name="book_name" placeholder="Book Name">
+                      <input type="text" class="form-control"  name="book_name" value=<?php echo $name;?>>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail3">AUthor Name</label>
-                      <input type="text" name="author_name" class="form-control"  placeholder="Author Name">
+                      <input type="text" name="author_name" class="form-control"  value=<?php echo $author;?>>
                     </div>
                     <div class="form-group">
                       <label for="qty">Quantity</label>
-                      <input type="text" name="quantity" class="form-control" placeholder="Quantity">
+                      <input type="text" name="quantity" class="form-control" value=<?php echo $quantity;?>>
                     </div>
                     <div class="form-group">
                       <label for="Availabe">Available Quantity</label>
-                      <input type="text" name="available_quantity" class="form-control" placeholder="available quantity">
+                      <input type="text" name="available_quantity" class="form-control" value=<?php echo $available_quantity;?>>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword4">Price</label>
-                      <input type="text" name="price" class="form-control" placeholder="Price">
+                      <input type="text" name="price" class="form-control" value=<?php echo $price;?>>
                     </div>
                     <!-- <div class="form-group">
                       <label>File upload</label>
@@ -56,8 +57,8 @@ include "header.php";
                       </div>
                     </div> -->                    
                     <div class="form-group">
-                      <label for="description">Description</label>
-                      <textarea name="description" class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                      <label for="exampleInputPassword4">Description</label>
+                      <input type="text" name="description" class="form-control" value=<?php echo $description;?>>
                     </div>
                     <input type="submit" name="submit" class="btn btn-primary me-2" value="Submit">
                     <button class="btn btn-light">Cancel</button>
@@ -72,11 +73,14 @@ include "header.php";
                     $available_quantity=$_POST['available_quantity'];
                     $price=$_POST['price'];
                     $description=$_POST['description'];
-                    $query="INSERT INTO `books`( `category`, `book_name`, `author`, `quantity`, `available_quantity`, `price`, `description`) 
-                    VALUES (' $category','$name','$author','$quantity','$available_quantity','$price','$description')"; 
-                    mysqli_query($link,$query);
+                    $query=("UPDATE `books` SET `category`='$category',`book_name`='$name',
+                    `author`='$author',`quantity`='$quantity',`available_quantity`='$available_quantity',
+                    `price`='$price',`description`='$description' WHERE id='$id'");                    
+                    mysqli_query($link,$query);                
                   }
+                  
                   ?>
+                  
              </div>
         </div>
     </div>

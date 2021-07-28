@@ -389,7 +389,7 @@ session_start();
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="../../index.html">
+            <a class="nav-link" href="index.php">
               <i class="mdi mdi-grid-large menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -415,25 +415,22 @@ session_start();
               <i class="menu-icon mdi mdi-card-text-outline"></i>
               <span class="menu-title">Add Category</span>
               <i class="menu-arrow"></i>
-            </a>
-            <!-- <div class="collapse" id="form-elements">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="add_category.php">Add Category</a></li>
-              </ul>
-            </div> -->
+            </a>            
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="add_books.php" aria-expanded="false" aria-controls="charts">
-              <i class="menu-icon mdi mdi-chart-line"></i>
+            <a class="nav-link" data-bs-toggle="collapse" href="add_books.php" aria-expanded="false" aria-controls="form-elements">
+              <i class="menu-icon mdi mdi-card-text-outline"></i>
               <span class="menu-title">Add Books</span>
               <i class="menu-arrow"></i>
+            </a>            
+          </li>
+          <li class="nav-item">           
+            <a class="nav-link" data-bs-toggle="collapse" href="view_books.php" aria-expanded="false" aria-controls="charts">
+              <i class="menu-icon mdi mdi-chart-line"></i>
+              <span class="menu-title">View Books</span>
+              <i class="menu-arrow"></i>
             </a>
-            <!-- <div class="collapse" id="charts">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">ChartJs</a></li>
-              </ul>
-            </div>
-          </li> -->
+          </li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
               <i class="menu-icon mdi mdi-table"></i>
