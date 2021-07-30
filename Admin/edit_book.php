@@ -17,10 +17,7 @@ while($row=mysqli_fetch_array($result)) {
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Basic form elements</h4>
-                <p class="card-description">
-                    Basic form elements
-                </p>
+                <h4 class="card-title">Edit Books</h4>                
                 <form class="forms-sample" action="" method="post">
                     <div class="form-group">
                       <label for="exampleInputName1">Category</label>
