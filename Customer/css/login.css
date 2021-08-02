@@ -1,0 +1,19 @@
+body{
+    font-family: sans-serif;
+}
+.container{
+    margin-top: 20px;
+}
+.right{
+    float: right;
+    margin-bottom: 20px;
+}
+.btn{
+    border-color: #001fff;
+    width: 50%;
+    height: 50px;
+    float: right;
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+}
