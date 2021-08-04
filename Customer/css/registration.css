@@ -1,0 +1,15 @@
+.container{
+    margin-top: 100px;
+}
+.container h3{
+    font-weight: bold;
+}
+.container small{
+    font-weight: 1000;
+}
+.container a:hover{
+    color: rgb(0, 26, 255);
+}
+.form-group{
+    margin-top: 20px;
+}

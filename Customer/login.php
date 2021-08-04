@@ -40,14 +40,14 @@ include "connection.php";
                       <input type="checkbox" class="form-check-input" id="exampleCheck1">
                       <label class="form-check-label" for="exampleCheck1">Check me out</label>
                     </div>
-                    <input type="submit" name="login" class="btn btn-primary">Submit</button>
+                    <input type="submit" name="login" value="Login" class="btn btn-primary"></button>
                   </form>
                   <?php
                      if(isset($_POST['login'])){
                       $email=$_POST['email'];
                       $password=$_POST['password'];
                       $count=0;
-                      $res=mysqli_query($link,"select * from admin where email='$email' && password='$password'");
+                      $res=mysqli_query($link,"select * from user where email='$email' && password='$password'");
                       $count=mysqli_num_rows($res);
                       if($count==o){
                           ?>
