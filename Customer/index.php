@@ -48,7 +48,7 @@ http://www.tooplate.com/view/2092-shelf
                             <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">Catalogs</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">Awards</a></li>
-                            <li class="nav-item"><a class="nav-link" href="login.php">Sign in</a></li>
+                            <li class="nav-item"><a class="nav-link" href="login.php">demo</a></li>
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
                         </ul>
                     </div>
@@ -63,7 +63,15 @@ http://www.tooplate.com/view/2092-shelf
                     </header>
                     
                     <p>Shelf HTML template is provided by Tooplate. Please tell your friends about it. Thank you. Images are from Unsplash website. In tincidunt metus sed justo tincidunt sollicitudin. Curabitur magna tellus, condimentum vitae consectetur id, elementum sit amet erat.</p>
-                    
+                    <?php
+                    $res=mysqli_query($link,"select * from books");
+                
+                        while($row=mysqli_fetch_array($res)) {
+                            $name=$row['book_name'];
+
+                        }
+                
+                    ?>
                     <div class="tm-gallery">
                         <div class="row">
                             <figure class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
@@ -72,7 +80,7 @@ http://www.tooplate.com/view/2092-shelf
                                         <img src="img/image-01.jpg" alt="Image" class="img-fluid tm-img-center">
                                     </div>
                                     
-                                    <p class="tm-figcaption">Nam vitae odio</p>
+                                    <p class="tm-figcaption"><?php echo $name;?></p>
                                 </a>
                             </figure>
                             <figure class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
@@ -80,7 +88,7 @@ http://www.tooplate.com/view/2092-shelf
                                     <div class="tm-gallery-item-overlay">
                                         <img src="img/image-02.jpg" alt="Image" class="img-fluid tm-img-center">
                                     </div>
-                                    <p class="tm-figcaption">Integer ornare</p>
+                                    <p class="tm-figcaption"><?php echo $name;?></p>
                                 </a>
                             </figure>
                             <figure class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
